@@ -1,84 +1,189 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#3367D6"/>
-  <link rel="apple-touch-icon" href="/icons-192.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽-CSDN博客 一，C++面向对象学习qt要有一些c++面向对象的基础C++的类与类之间存在上下级的关系，类可以继承另外一个类。被继承的类通常称作为是基类。而主动继承的类通常被称作是派生类。 二，创建qt项目  创建工程时选择的QWidget类。 该工程的目的就是为了创建一个窗口，对Qt的界面开发，就是基于此工程的，可以在窗口上添">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽">
+<meta property="og:url" content="https://junyu21.github.io/2024/01/21/qt1/index.html">
+<meta property="og:site_name" content="JunYu">
+<meta property="og:description" content="Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽-CSDN博客 一，C++面向对象学习qt要有一些c++面向对象的基础C++的类与类之间存在上下级的关系，类可以继承另外一个类。被继承的类通常称作为是基类。而主动继承的类通常被称作是派生类。 二，创建qt项目  创建工程时选择的QWidget类。 该工程的目的就是为了创建一个窗口，对Qt的界面开发，就是基于此工程的，可以在窗口上添">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://junyu21.github.io/images/qt.png">
+<meta property="article:published_time" content="2024-01-21T06:39:51.102Z">
+<meta property="article:modified_time" content="2024-01-21T06:39:08.308Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="qt">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://junyu21.github.io/images/qt.png">
+  
+  
+  
+  <title>Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽 - JunYu</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"junyu21.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
 
   
+<meta name="generator" content="Hexo 6.3.0"></head>
 
-  
 
-  
-    <meta name="author" content="John Doe">
-  
-
-  
-
-  
-
-  <title>Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽 | JunYu</title>
-
-  
-
-  
-    <link rel="shortcut icon" href="/favicon.ico">
-  
-
-  <!--mathjax latex数学公式显示支持-->
-  
-  
-
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/monokai.min.css">
-  
-
-  
-
-  
-<link rel="stylesheet" href="/css/style.css">
-
-</head>
 <body>
-  <div class="root-container">
-    
-<!-- header container -->
-<header class="header-container post">
-  
-    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
 
-  <!-- navbar -->
-<nav class="navbar">
-  <div class="navbar-content">
-    <!-- logo -->
-    <div class="navbar-logo">
-      <a href="/">
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          JunYu
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
         
-      </a>
-    </div>
-    <!-- link -->
-    <div class="navbar-link">
-      <div class="navbar-btn">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul class="navbar-list">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
         
-          <li class="navbar-list-item"><a href="/">首页</a></li>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
         
-          <li class="navbar-list-item"><a href="/links">友链</a></li>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
         
-          <li class="navbar-list-item"><a href="/about">关于</a></li>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
         
       </ul>
     </div>
@@ -86,609 +191,506 @@
 </nav>
 
   
-  
 
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-    <div class="header-content">
-      <div class="post-text layout-block">
-        <div class="layout-margin">
-          <h1 class="title-wrap">Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽</h1>
-          <h2 class="title-sub-wrap">
-            <strong>John Doe</strong>
-            <span>发布于</span>
-            <time  class="article-date" datetime="2024-01-21T06:39:51.102Z" itemprop="datePublished">2024-01-21</time>
-          </h2>
+<div id="banner" class="banner" parallax=true
+     style="background: url('/images/HelloWorld.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
+            <span id="subtitle" data-typed-text="Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽"></span>
           
-            <h2 id="/2024/01/21/qt1/" class="title-sub-wrap leancloud_visitors" data-flag-title="Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽">
-              <em>文章访问量</em>
-              <i class="leancloud-visitors-count"></i>
-            </h2>
-          
-          <ul class="wrap-list dark">
-  
-    <li><a href="/categories/Qt%E5%AD%A6%E4%B9%A0/">📒 Qt学习</a></li>
-  
-</ul>
-          <ul class="wrap-list dark">
-  
-    <li><a href="/tags/qt/">🏷️ qt</a></li>
-  
-</ul>
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-21 14:39" pubdate>
+          January 21, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.2k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
-  
+  </div>
+</div>
 
-  
-  
-  
-</header>
+</div>
 
-    <!-- 文章 -->
+  </header>
 
-<!-- 文章内容 -->
-<div class="body-container">
-  <article class="content-container layout-block post-container">
-    <div class="article-info">
+  <main>
+    
       
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-      
-      
-      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_74292291/article/details/135371202?spm=1001.2014.3001.5502">Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽-CSDN博客</a></p>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_74292291/article/details/135371202?spm=1001.2014.3001.5502">Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽-CSDN博客</a></p>
 <h2 id="一，C-面向对象"><a href="#一，C-面向对象" class="headerlink" title="一，C++面向对象"></a>一，C++面向对象</h2><p><strong>学习qt要有一些c++面向对象的基础</strong><br>C++的类与类之间存在上下级的关系，类可以继承另外一个类。被继承的类通常称作为是基类。<br>而主动继承的类通常被称作是派生类。</p>
-<h2 id="二，创建qt项目"><a href="#二，创建qt项目" class="headerlink" title="二，创建qt项目"></a>二，创建qt项目</h2><p><img src="https://img-blog.csdnimg.cn/direct/6473bd3c88f44a70bd14acc1060fa573.png" width="290px"><img src="https://img-blog.csdnimg.cn/direct/b9ce66daca154f6fab947c841e46b915.png" width="270px"><img src="https://img-blog.csdnimg.cn/direct/cf0e9a7e1a7e4d018e4c2b31949188ca.png" width="270px"></p>
+<h2 id="二，创建qt项目"><a href="#二，创建qt项目" class="headerlink" title="二，创建qt项目"></a>二，创建qt项目</h2><p><img src="https://img-blog.csdnimg.cn/direct/6473bd3c88f44a70bd14acc1060fa573.png" srcset="/img/loading.gif" lazyload width="290px"><img src="https://img-blog.csdnimg.cn/direct/b9ce66daca154f6fab947c841e46b915.png" srcset="/img/loading.gif" lazyload width="270px"><img src="https://img-blog.csdnimg.cn/direct/cf0e9a7e1a7e4d018e4c2b31949188ca.png" srcset="/img/loading.gif" lazyload width="270px"></p>
 <ol>
 <li>创建工程时选择的QWidget类。<br> 该工程的目的就是为了创建一个窗口，对Qt的界面开发，就是基于此工程的，可以在窗口上添加组件或者自由设计均可。</li>
 <li>然后一键next</li>
 </ol>
-<h2 id="三，目录详细介绍"><a href="#三，目录详细介绍" class="headerlink" title="三，目录详细介绍"></a>三，目录详细介绍</h2><p><img src="https://img-blog.csdnimg.cn/direct/adc73f50b8d2427d89c7fe972ad43c01.png" alt="在这里插入图片描述"></p>
-<h3 id="1，C-程序的入口main-cpp"><a href="#1，C-程序的入口main-cpp" class="headerlink" title="1，C++程序的入口main.cpp"></a>1，C++程序的入口main.cpp</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// widget.h是Qt生成窗口用的类，该类继承了QWidget类，也就意味着widget类包含了QWidget类的所有功能。</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;widget.h&quot;</span></span></span><br><span class="line"><span class="comment">// 大写的Q为开头的类，都是Qt提供给我们的类</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QApplication&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// QApplication类作为Qt程序的入口实现。也作为程序的结束。</span></span><br><span class="line">    <span class="function">QApplication <span class="title">a</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    <span class="comment">// 实例化一个窗口类的对象w</span></span><br><span class="line">    Widget w;</span><br><span class="line">    <span class="comment">// w.show()的作用是使得窗口能够显示出来</span></span><br><span class="line">    w.<span class="built_in">show</span>();</span><br><span class="line">    <span class="keyword">return</span> a.<span class="built_in">exec</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2，Qt生成窗口的类的头文件widget-h"><a href="#2，Qt生成窗口的类的头文件widget-h" class="headerlink" title="2，Qt生成窗口的类的头文件widget.h"></a>2，Qt生成窗口的类的头文件widget.h</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> WIDGET_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> WIDGET_H</span></span><br><span class="line"><span class="comment">// 添加基类的头文件</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QWidget&gt;</span></span></span><br><span class="line">QT_BEGIN_NAMESPACE</span><br><span class="line"><span class="comment">// 声明命名空间Ui，Ui下声明了Widget类</span></span><br><span class="line"><span class="keyword">namespace</span> Ui &#123; <span class="keyword">class</span> <span class="title class_">Widget</span>; &#125;</span><br><span class="line">QT_END_NAMESPACE</span><br><span class="line"><span class="comment">// Widget公共继承QWidget</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Widget</span> : <span class="keyword">public</span> QWidget</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// Qt提供给类的宏定义，里面包含了Qt的核心机制，必须要添加，否则极有可能造成程序编译错误。</span></span><br><span class="line">    Q_OBJECT</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">// 构造函数：基类的指针，默认值为nullptr</span></span><br><span class="line">    <span class="built_in">Widget</span>(QWidget *parent = <span class="literal">nullptr</span>);</span><br><span class="line">    <span class="comment">// 析构函数，这里也是一个虚析构函数</span></span><br><span class="line">    ~<span class="built_in">Widget</span>();</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="comment">// 命名空间下Widget类的指针</span></span><br><span class="line">    Ui::Widget *ui;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">// WIDGET_H</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="三，目录详细介绍"><a href="#三，目录详细介绍" class="headerlink" title="三，目录详细介绍"></a>三，目录详细介绍</h2><p><img src="https://img-blog.csdnimg.cn/direct/adc73f50b8d2427d89c7fe972ad43c01.png" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<h3 id="1，C-程序的入口main-cpp"><a href="#1，C-程序的入口main-cpp" class="headerlink" title="1，C++程序的入口main.cpp"></a>1，C++程序的入口main.cpp</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// widget.h是Qt生成窗口用的类，该类继承了QWidget类，也就意味着widget类包含了QWidget类的所有功能。</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;widget.h&quot;</span></span><br><span class="hljs-comment">// 大写的Q为开头的类，都是Qt提供给我们的类</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QApplication&gt;</span></span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> *argv[])</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-comment">// QApplication类作为Qt程序的入口实现。也作为程序的结束。</span><br>    <span class="hljs-function">QApplication <span class="hljs-title">a</span><span class="hljs-params">(argc, argv)</span></span>;<br>    <span class="hljs-comment">// 实例化一个窗口类的对象w</span><br>    Widget w;<br>    <span class="hljs-comment">// w.show()的作用是使得窗口能够显示出来</span><br>    w.<span class="hljs-built_in">show</span>();<br>    <span class="hljs-keyword">return</span> a.<span class="hljs-built_in">exec</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="2，Qt生成窗口的类的头文件widget-h"><a href="#2，Qt生成窗口的类的头文件widget-h" class="headerlink" title="2，Qt生成窗口的类的头文件widget.h"></a>2，Qt生成窗口的类的头文件widget.h</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">ifndef</span> WIDGET_H</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> WIDGET_H</span><br><span class="hljs-comment">// 添加基类的头文件</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QWidget&gt;</span></span><br>QT_BEGIN_NAMESPACE<br><span class="hljs-comment">// 声明命名空间Ui，Ui下声明了Widget类</span><br><span class="hljs-keyword">namespace</span> Ui &#123; <span class="hljs-keyword">class</span> <span class="hljs-title class_">Widget</span>; &#125;<br>QT_END_NAMESPACE<br><span class="hljs-comment">// Widget公共继承QWidget</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Widget</span> : <span class="hljs-keyword">public</span> QWidget<br>&#123;<br>	<span class="hljs-comment">// Qt提供给类的宏定义，里面包含了Qt的核心机制，必须要添加，否则极有可能造成程序编译错误。</span><br>    Q_OBJECT<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-comment">// 构造函数：基类的指针，默认值为nullptr</span><br>    <span class="hljs-built_in">Widget</span>(QWidget *parent = <span class="hljs-literal">nullptr</span>);<br>    <span class="hljs-comment">// 析构函数，这里也是一个虚析构函数</span><br>    ~<span class="hljs-built_in">Widget</span>();<br><span class="hljs-keyword">private</span>:<br>	<span class="hljs-comment">// 命名空间下Widget类的指针</span><br>    Ui::Widget *ui;<br>&#125;;<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span> <span class="hljs-comment">// WIDGET_H</span></span><br></code></pre></td></tr></table></figure>
 
-<h3 id="3，Qt生成窗口的类的实现文件widget-cpp"><a href="#3，Qt生成窗口的类的实现文件widget-cpp" class="headerlink" title="3，Qt生成窗口的类的实现文件widget.cpp"></a>3，Qt生成窗口的类的实现文件widget.cpp</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;widget.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui_widget.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下写法为构造函数的初始化列表</span></span><br><span class="line"><span class="comment">// 初始化列表在这里的作用是：</span></span><br><span class="line"><span class="comment">// 1) 将参数parent透过基类的构造函数传参，并调用基类的构造函数</span></span><br><span class="line"><span class="comment">// 2) 将ui指针实例化Ui::Widget对象</span></span><br><span class="line">Widget::<span class="built_in">Widget</span>(QWidget *parent)</span><br><span class="line">    : <span class="built_in">QWidget</span>(parent)</span><br><span class="line">    , <span class="built_in">ui</span>(<span class="keyword">new</span> Ui::Widget)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// ui对象调用成员函数setupUi,其作用为，运行设计师界面的内容</span></span><br><span class="line">    ui-&gt;<span class="built_in">setupUi</span>(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Widget::~<span class="built_in">Widget</span>()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// 释放ui指针的堆空间</span></span><br><span class="line">    <span class="keyword">delete</span> ui;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="四，写个hello-world并调节其样式"><a href="#四，写个hello-world并调节其样式" class="headerlink" title="四，写个hello world并调节其样式"></a>四，写个hello world并调节其样式</h2><h3 id="1，通过代码实现"><a href="#1，通过代码实现" class="headerlink" title="1，通过代码实现"></a>1，通过代码实现</h3><h4 id="在widget-h头文件中添加"><a href="#在widget-h头文件中添加" class="headerlink" title="在widget.h头文件中添加"></a>在widget.h头文件中添加</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QLabel&gt;</span>  <span class="comment">// 声明组件所需要用到的类</span></span></span><br><span class="line">QLabel *label;   <span class="comment">// 声明组件所需要用到的指针</span></span><br></pre></td></tr></table></figure>
+<h3 id="3，Qt生成窗口的类的实现文件widget-cpp"><a href="#3，Qt生成窗口的类的实现文件widget-cpp" class="headerlink" title="3，Qt生成窗口的类的实现文件widget.cpp"></a>3，Qt生成窗口的类的实现文件widget.cpp</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;widget.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;ui_widget.h&quot;</span></span><br><br><span class="hljs-comment">// 以下写法为构造函数的初始化列表</span><br><span class="hljs-comment">// 初始化列表在这里的作用是：</span><br><span class="hljs-comment">// 1) 将参数parent透过基类的构造函数传参，并调用基类的构造函数</span><br><span class="hljs-comment">// 2) 将ui指针实例化Ui::Widget对象</span><br>Widget::<span class="hljs-built_in">Widget</span>(QWidget *parent)<br>    : <span class="hljs-built_in">QWidget</span>(parent)<br>    , <span class="hljs-built_in">ui</span>(<span class="hljs-keyword">new</span> Ui::Widget)<br>&#123;<br>	<span class="hljs-comment">// ui对象调用成员函数setupUi,其作用为，运行设计师界面的内容</span><br>    ui-&gt;<span class="hljs-built_in">setupUi</span>(<span class="hljs-keyword">this</span>);<br>&#125;<br><br>Widget::~<span class="hljs-built_in">Widget</span>()<br>&#123;<br>	<span class="hljs-comment">// 释放ui指针的堆空间</span><br>    <span class="hljs-keyword">delete</span> ui;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="四，写个hello-world并调节其样式"><a href="#四，写个hello-world并调节其样式" class="headerlink" title="四，写个hello world并调节其样式"></a>四，写个hello world并调节其样式</h2><h3 id="1，通过代码实现"><a href="#1，通过代码实现" class="headerlink" title="1，通过代码实现"></a>1，通过代码实现</h3><h4 id="在widget-h头文件中添加"><a href="#在widget-h头文件中添加" class="headerlink" title="在widget.h头文件中添加"></a>在widget.h头文件中添加</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QLabel&gt;</span>  <span class="hljs-comment">// 声明组件所需要用到的类</span></span><br>QLabel *label;   <span class="hljs-comment">// 声明组件所需要用到的指针</span><br></code></pre></td></tr></table></figure>
 <p>添加后</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> WIDGET_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> WIDGET_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QWidget&gt;</span></span></span><br><span class="line"><span class="comment">// 声明组件所需要用到的类</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QLabel&gt;</span></span></span><br><span class="line">QT_BEGIN_NAMESPACE</span><br><span class="line"><span class="keyword">namespace</span> Ui &#123; <span class="keyword">class</span> <span class="title class_">Widget</span>; &#125;</span><br><span class="line">QT_END_NAMESPACE</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Widget</span> : <span class="keyword">public</span> QWidget</span><br><span class="line">&#123;</span><br><span class="line">    Q_OBJECT</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Widget</span>(QWidget *parent = <span class="literal">nullptr</span>);</span><br><span class="line">    ~<span class="built_in">Widget</span>();</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Ui::Widget *ui;</span><br><span class="line">	<span class="comment">// 声明组件所需要用到的指针</span></span><br><span class="line">    QLabel *label;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">// WIDGET_H</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="widget-cpp里"><a href="#widget-cpp里" class="headerlink" title="widget.cpp里"></a>widget.cpp里</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;widget.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui_widget.h&quot;</span></span></span><br><span class="line">Widget::<span class="built_in">Widget</span>(QWidget *parent)</span><br><span class="line">    : <span class="built_in">QWidget</span>(parent)</span><br><span class="line">    , <span class="built_in">ui</span>(<span class="keyword">new</span> Ui::Widget)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;<span class="built_in">setupUi</span>(<span class="keyword">this</span>);</span><br><span class="line">	<span class="comment">// 调整窗口的大小</span></span><br><span class="line">    <span class="built_in">resize</span>(<span class="number">400</span>, <span class="number">300</span>);</span><br><span class="line">	<span class="comment">// 实例化标签对象，第一个参数&quot;Hello World&quot;代表label的文本信息。</span></span><br><span class="line">	<span class="comment">// 第二个参数this，代表窗口，意思是将label标签贴在this窗口上</span></span><br><span class="line">	label = <span class="keyword">new</span> <span class="built_in">QLabel</span>(<span class="string">&quot;Hello World&quot;</span>, <span class="keyword">this</span>);</span><br><span class="line">	<span class="comment">// setGeometry代表设置组件的几何信息，包括：x坐标，y坐标，w宽度，h高度</span></span><br><span class="line">    label-&gt;<span class="built_in">setGeometry</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">400</span>, <span class="number">300</span>);</span><br><span class="line">    <span class="comment">// setAlignment代表设置组件内字体的对齐方式，Qt::AlignCenter也代表将文字居中对齐</span></span><br><span class="line">    label-&gt;<span class="built_in">setAlignment</span>(Qt::AlignCenter);</span><br><span class="line">    <span class="comment">// setStyleSheet代表设置组件的样式表，其中可以修改字体的大小。</span></span><br><span class="line">    label-&gt;<span class="built_in">setStyleSheet</span>(<span class="string">&quot;font:50px&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">Widget::~<span class="built_in">Widget</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> ui;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h4><img src="https://img-blog.csdnimg.cn/direct/d09bce553248452d88a4c19d3db06232.png" width="220">
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">ifndef</span> WIDGET_H</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> WIDGET_H</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QWidget&gt;</span></span><br><span class="hljs-comment">// 声明组件所需要用到的类</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QLabel&gt;</span></span><br>QT_BEGIN_NAMESPACE<br><span class="hljs-keyword">namespace</span> Ui &#123; <span class="hljs-keyword">class</span> <span class="hljs-title class_">Widget</span>; &#125;<br>QT_END_NAMESPACE<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Widget</span> : <span class="hljs-keyword">public</span> QWidget<br>&#123;<br>    Q_OBJECT<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-built_in">Widget</span>(QWidget *parent = <span class="hljs-literal">nullptr</span>);<br>    ~<span class="hljs-built_in">Widget</span>();<br><span class="hljs-keyword">private</span>:<br>    Ui::Widget *ui;<br>	<span class="hljs-comment">// 声明组件所需要用到的指针</span><br>    QLabel *label;<br>&#125;;<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span> <span class="hljs-comment">// WIDGET_H</span></span><br></code></pre></td></tr></table></figure>
+<h4 id="widget-cpp里"><a href="#widget-cpp里" class="headerlink" title="widget.cpp里"></a>widget.cpp里</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;widget.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;ui_widget.h&quot;</span></span><br>Widget::<span class="hljs-built_in">Widget</span>(QWidget *parent)<br>    : <span class="hljs-built_in">QWidget</span>(parent)<br>    , <span class="hljs-built_in">ui</span>(<span class="hljs-keyword">new</span> Ui::Widget)<br>&#123;<br>    ui-&gt;<span class="hljs-built_in">setupUi</span>(<span class="hljs-keyword">this</span>);<br>	<span class="hljs-comment">// 调整窗口的大小</span><br>    <span class="hljs-built_in">resize</span>(<span class="hljs-number">400</span>, <span class="hljs-number">300</span>);<br>	<span class="hljs-comment">// 实例化标签对象，第一个参数&quot;Hello World&quot;代表label的文本信息。</span><br>	<span class="hljs-comment">// 第二个参数this，代表窗口，意思是将label标签贴在this窗口上</span><br>	label = <span class="hljs-keyword">new</span> <span class="hljs-built_in">QLabel</span>(<span class="hljs-string">&quot;Hello World&quot;</span>, <span class="hljs-keyword">this</span>);<br>	<span class="hljs-comment">// setGeometry代表设置组件的几何信息，包括：x坐标，y坐标，w宽度，h高度</span><br>    label-&gt;<span class="hljs-built_in">setGeometry</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">300</span>);<br>    <span class="hljs-comment">// setAlignment代表设置组件内字体的对齐方式，Qt::AlignCenter也代表将文字居中对齐</span><br>    label-&gt;<span class="hljs-built_in">setAlignment</span>(Qt::AlignCenter);<br>    <span class="hljs-comment">// setStyleSheet代表设置组件的样式表，其中可以修改字体的大小。</span><br>    label-&gt;<span class="hljs-built_in">setStyleSheet</span>(<span class="hljs-string">&quot;font:50px&quot;</span>);<br>&#125;<br>Widget::~<span class="hljs-built_in">Widget</span>()<br>&#123;<br>    <span class="hljs-keyword">delete</span> ui;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h4><img src="https://img-blog.csdnimg.cn/direct/d09bce553248452d88a4c19d3db06232.png" srcset="/img/loading.gif" lazyload width="220">
 
-<p>拉伸窗口会发现Hello World会原位不动<br><img src="https://img-blog.csdnimg.cn/direct/94a7ee81bb494b709388f637f830b028.png" width="280"></p>
+<p>拉伸窗口会发现Hello World会原位不动<br><img src="https://img-blog.csdnimg.cn/direct/94a7ee81bb494b709388f637f830b028.png" srcset="/img/loading.gif" lazyload width="280"></p>
 <h4 id="设计样式1-将label组件始终放在窗口的正中间"><a href="#设计样式1-将label组件始终放在窗口的正中间" class="headerlink" title="设计样式1 将label组件始终放在窗口的正中间"></a>设计样式1 将label组件始终放在窗口的正中间</h4><p>在Qt生成的工程当中，如果没有添加组件，并且可以拉伸窗口大小的话，拉太小可能会隐藏窗口上的组件，拉太大又有些影响美观，所以我们想要，保持组件们一直持续显示在窗口的正中央。</p>
-<h5 id="1-在widget-h头文件中添加"><a href="#1-在widget-h头文件中添加" class="headerlink" title="1) 在widget.h头文件中添加"></a>1) 在widget.h头文件中添加</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QHBoxLayout&gt;</span>  <span class="comment">// 声明组件所需要用到的类</span></span></span><br><span class="line">QHBoxLayout *hboxlayout;  <span class="comment">// 声明组件所需要用到的指针</span></span><br></pre></td></tr></table></figure>
+<h5 id="1-在widget-h头文件中添加"><a href="#1-在widget-h头文件中添加" class="headerlink" title="1) 在widget.h头文件中添加"></a>1) 在widget.h头文件中添加</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QHBoxLayout&gt;</span>  <span class="hljs-comment">// 声明组件所需要用到的类</span></span><br>QHBoxLayout *hboxlayout;  <span class="hljs-comment">// 声明组件所需要用到的指针</span><br></code></pre></td></tr></table></figure>
 <p>上同</p>
-<h5 id="2-widget-cpp里添加"><a href="#2-widget-cpp里添加" class="headerlink" title="2) widget.cpp里添加"></a>2) widget.cpp里添加</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// QHBoxLayout的基类是QBoxLayout，他还有一个兄弟，为QVBoxLayout，自己是水平布局，兄弟是垂直布局。</span></span><br><span class="line"><span class="comment">// 所有的布局往上的基类都是QLayout</span></span><br><span class="line">hboxlayout = <span class="keyword">new</span> <span class="built_in">QHBoxLayout</span>(<span class="keyword">this</span>);</span><br><span class="line"><span class="comment">// 在布局里添加组件</span></span><br><span class="line">hboxlayout-&gt;<span class="built_in">addWidget</span>(label);</span><br></pre></td></tr></table></figure>
-<img src="https://img-blog.csdnimg.cn/direct/08b7f74714ff44749a5ce2492c8e1f79.png" width="390">
+<h5 id="2-widget-cpp里添加"><a href="#2-widget-cpp里添加" class="headerlink" title="2) widget.cpp里添加"></a>2) widget.cpp里添加</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// QHBoxLayout的基类是QBoxLayout，他还有一个兄弟，为QVBoxLayout，自己是水平布局，兄弟是垂直布局。</span><br><span class="hljs-comment">// 所有的布局往上的基类都是QLayout</span><br>hboxlayout = <span class="hljs-keyword">new</span> <span class="hljs-built_in">QHBoxLayout</span>(<span class="hljs-keyword">this</span>);<br><span class="hljs-comment">// 在布局里添加组件</span><br>hboxlayout-&gt;<span class="hljs-built_in">addWidget</span>(label);<br></code></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/direct/08b7f74714ff44749a5ce2492c8e1f79.png" srcset="/img/loading.gif" lazyload width="390">
 
 <p>这样如何拉伸界面Hello World都会在窗户正中央</p>
 <h4 id="设计样式2-样式表"><a href="#设计样式2-样式表" class="headerlink" title="设计样式2 样式表"></a>设计样式2 样式表</h4><p>在Qt中，修改组件或者窗口的字体、背景颜色等等，都可以通过设置样式表实现。<br>一些比较炫酷的界面效果也可以用样式表实现。</p>
 <p>在如下的代码实例中，不同的样式表语句，需要用分号隔开，不然会引起冲突。<br>由于不会对函数内的字符串类型纠错，注意不得有拼写错误。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// font可以设置字体的样式</span></span><br><span class="line"><span class="comment">// background-color修改背景颜色</span></span><br><span class="line"><span class="comment">// color修改文本信息的颜色</span></span><br><span class="line"><span class="comment">// rgb表示颜色由红绿蓝三色组成，每个颜色的通道占据一个字节的数据(最大值为FF，255)</span></span><br><span class="line">   label-&gt;<span class="built_in">setStyleSheet</span>(<span class="string">&quot;font:50px;\</span></span><br><span class="line"><span class="string">                         background-color:rgb(45, 9, 34);\</span></span><br><span class="line"><span class="string">                         color:rgb(255, 255, 255);\</span></span><br><span class="line"><span class="string">                        &quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// font可以设置字体的样式</span><br><span class="hljs-comment">// background-color修改背景颜色</span><br><span class="hljs-comment">// color修改文本信息的颜色</span><br><span class="hljs-comment">// rgb表示颜色由红绿蓝三色组成，每个颜色的通道占据一个字节的数据(最大值为FF，255)</span><br>   label-&gt;<span class="hljs-built_in">setStyleSheet</span>(<span class="hljs-string">&quot;font:50px;\</span><br><span class="hljs-string">                         background-color:rgb(45, 9, 34);\</span><br><span class="hljs-string">                         color:rgb(255, 255, 255);\</span><br><span class="hljs-string">                        &quot;</span>);<br></code></pre></td></tr></table></figure>
 
 <p>在Qt中，也可以用QSS语句实现样式表的功能，QSS语句类似于HTML CSS语言，用{}整合想要的数据，在内部通过 “属性:数值” 的方式设置自己想要的效果 </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">QString sheet = <span class="string">&quot;QLabel\</span></span><br><span class="line"><span class="string">					&#123;\</span></span><br><span class="line"><span class="string">					font:50px;\</span></span><br><span class="line"><span class="string">					background-color:rgb(22, 22, 11);\</span></span><br><span class="line"><span class="string">					color:rgb(19, 133, 33);\</span></span><br><span class="line"><span class="string">					&#125;;&quot;</span>;</span><br><span class="line">label-&gt;<span class="built_in">setStyleSheet</span>(sheet);</span><br></pre></td></tr></table></figure>
-<h3 id="2，进入Qt设计师界面"><a href="#2，进入Qt设计师界面" class="headerlink" title="2，进入Qt设计师界面"></a>2，进入Qt设计师界面</h3><p>先双击Forms文件夹下widget.ui文件，进入Qt设计师界面。<br><img src="https://img-blog.csdnimg.cn/direct/de00ed16a40f4db88da60a6a9ad96029.png" width="270"><br>在左列中找到label，将label拖拽到窗口的正中间<br><img src="https://img-blog.csdnimg.cn/direct/8f3820fa38b949b9a4437f650e97de57.png" width="390"><br>在右上角对象与类的列表中，找到窗口Widget，点击选中窗口。<br>在右下角geometry可以修改窗口的尺寸，再同步以下label的位置。<br>选择label，在右下角找到alignment，水平和垂直均选择为Center，代表居中对齐。<br><img src="https://img-blog.csdnimg.cn/direct/d3be8bd8507846b796de0b8eb8aee3ac.png" width="270"><br>选中label，找到font，透过调整点大小的值来修改字体的大小。</p>
-<h2 id="五，按钮"><a href="#五，按钮" class="headerlink" title="五，按钮"></a>五，按钮</h2><h3 id="1，创建按钮"><a href="#1，创建按钮" class="headerlink" title="1，创建按钮"></a>1，创建按钮</h3><p>当我们在设计师界面中，将按钮放置在布局里时，按钮的高度并不会发生改变，同时变得很扁。这是因为它垂直的尺寸策略为fixed固定值，需要将其修改为与水平除了相一致的Minimum即可，或者统一修改为fixed，同时设置按钮尺寸的最小尺寸。<br><img src="https://img-blog.csdnimg.cn/direct/16b3dc92b48341c39b38c2bc1df0845f.png" width="430"><img src="https://img-blog.csdnimg.cn/direct/ab6317b6232e4078a72e79bc7765fd5a.png" width="220"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp">QString sheet = <span class="hljs-string">&quot;QLabel\</span><br><span class="hljs-string">					&#123;\</span><br><span class="hljs-string">					font:50px;\</span><br><span class="hljs-string">					background-color:rgb(22, 22, 11);\</span><br><span class="hljs-string">					color:rgb(19, 133, 33);\</span><br><span class="hljs-string">					&#125;;&quot;</span>;<br>label-&gt;<span class="hljs-built_in">setStyleSheet</span>(sheet);<br></code></pre></td></tr></table></figure>
+<h3 id="2，进入Qt设计师界面"><a href="#2，进入Qt设计师界面" class="headerlink" title="2，进入Qt设计师界面"></a>2，进入Qt设计师界面</h3><p>先双击Forms文件夹下widget.ui文件，进入Qt设计师界面。<br><img src="https://img-blog.csdnimg.cn/direct/de00ed16a40f4db88da60a6a9ad96029.png" srcset="/img/loading.gif" lazyload width="270"><br>在左列中找到label，将label拖拽到窗口的正中间<br><img src="https://img-blog.csdnimg.cn/direct/8f3820fa38b949b9a4437f650e97de57.png" srcset="/img/loading.gif" lazyload width="390"><br>在右上角对象与类的列表中，找到窗口Widget，点击选中窗口。<br>在右下角geometry可以修改窗口的尺寸，再同步以下label的位置。<br>选择label，在右下角找到alignment，水平和垂直均选择为Center，代表居中对齐。<br><img src="https://img-blog.csdnimg.cn/direct/d3be8bd8507846b796de0b8eb8aee3ac.png" srcset="/img/loading.gif" lazyload width="270"><br>选中label，找到font，透过调整点大小的值来修改字体的大小。</p>
+<h2 id="五，按钮"><a href="#五，按钮" class="headerlink" title="五，按钮"></a>五，按钮</h2><h3 id="1，创建按钮"><a href="#1，创建按钮" class="headerlink" title="1，创建按钮"></a>1，创建按钮</h3><p>当我们在设计师界面中，将按钮放置在布局里时，按钮的高度并不会发生改变，同时变得很扁。这是因为它垂直的尺寸策略为fixed固定值，需要将其修改为与水平除了相一致的Minimum即可，或者统一修改为fixed，同时设置按钮尺寸的最小尺寸。<br><img src="https://img-blog.csdnimg.cn/direct/16b3dc92b48341c39b38c2bc1df0845f.png" srcset="/img/loading.gif" lazyload width="430"><img src="https://img-blog.csdnimg.cn/direct/ab6317b6232e4078a72e79bc7765fd5a.png" srcset="/img/loading.gif" lazyload width="220"></p>
 <h3 id="2，信号和槽"><a href="#2，信号和槽" class="headerlink" title="2，信号和槽"></a>2，信号和槽</h3><p>信号和槽其实是一个函数</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QObject::<span class="built_in">connect</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">QObject::<span class="hljs-built_in">connect</span>()<br></code></pre></td></tr></table></figure>
 <p>connect函数的作用是连接信号和槽。</p>
 <p>QObject类是Qt里最上层的类。绝大多数的Qt类往上，都会继承该类，也可以算是Qt里的祖宗类<br>该QObject可以用来表示窗口，也可以用来表示组件、控件的对象</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">QMetaObject::Connection </span></span><br><span class="line"><span class="function"><span class="title">QObject::connect</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">                 <span class="type">const</span> QObject *sender, <span class="comment">// 信号的发送者</span></span></span></span><br><span class="line"><span class="params"><span class="function">                 <span class="type">const</span> <span class="type">char</span> *signal,  <span class="comment">// 具体的信号</span></span></span></span><br><span class="line"><span class="params"><span class="function">                 <span class="type">const</span> QObject *receiver, <span class="comment">// 信号的接收者</span></span></span></span><br><span class="line"><span class="params"><span class="function">                 <span class="type">const</span> <span class="type">char</span> *method, <span class="comment">// 槽函数</span></span></span></span><br><span class="line"><span class="params"><span class="function">                 Qt::ConnectionType type = Qt::AutoConnection</span></span></span><br><span class="line"><span class="params"><span class="function">                 )</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">QMetaObject::Connection </span><br><span class="hljs-function"><span class="hljs-title">QObject::connect</span><span class="hljs-params">(</span></span><br><span class="hljs-params"><span class="hljs-function">                 <span class="hljs-type">const</span> QObject *sender, <span class="hljs-comment">// 信号的发送者</span></span></span><br><span class="hljs-params"><span class="hljs-function">                 <span class="hljs-type">const</span> <span class="hljs-type">char</span> *signal,  <span class="hljs-comment">// 具体的信号</span></span></span><br><span class="hljs-params"><span class="hljs-function">                 <span class="hljs-type">const</span> QObject *receiver, <span class="hljs-comment">// 信号的接收者</span></span></span><br><span class="hljs-params"><span class="hljs-function">                 <span class="hljs-type">const</span> <span class="hljs-type">char</span> *method, <span class="hljs-comment">// 槽函数</span></span></span><br><span class="hljs-params"><span class="hljs-function">                 Qt::ConnectionType type = Qt::AutoConnection</span></span><br><span class="hljs-params"><span class="hljs-function">                 )</span></span><br></code></pre></td></tr></table></figure>
 <p>具体的信号和槽函数是分别通过SIGNAL()和SLOT()实现的。<br>这是两个宏定义函数，最终转换成了char* 字符串类型</p>
 <h4 id="1）点击按钮之后，将整个窗口显示全屏。"><a href="#1）点击按钮之后，将整个窗口显示全屏。" class="headerlink" title="1）点击按钮之后，将整个窗口显示全屏。"></a>1）点击按钮之后，将整个窗口显示全屏。</h4><p><strong>第一个方案：利用信号和槽的编辑界面来完成相应功能</strong></p>
-<p>先来到设计师界面，首先保证界面内有一个按钮。<br>在上方工具栏中点击第二个按钮，第二个按钮的意思就是edit signal&#x2F;slot，专门用来编辑信号和槽的界面。<br><img src="https://img-blog.csdnimg.cn/direct/2725291547a444e6a4ce05531038fbdf.png" width="230"><br>想要实现信号和槽，就要分析谁是信号的发送者？谁是信号的接收者？<br>在该案例中，点击按钮之后，窗口才会做出反应，所以信号的发送者就是按钮，信号的接收者为窗口。<br>点击按钮，长按，往外拖出一跟线，连接到窗口上。<br>在配置连接的对话框中，点击下方从QWidget继承的信号和槽，左边信号选择按钮的clicked()信号，右边的槽函数选择窗口的showFullScreen()槽函数。<br><img src="https://img-blog.csdnimg.cn/direct/ca76040b965b4719b4b24a1044071d7b.png" width="300"></p>
-<p><strong>第二个方案：通过转到槽来实现相应功能</strong><br>来到设计师界面中，找按钮，右键点击，选择转到槽的操作。此时，需要选择连接的信号，选择clicked()。<br><img src="https://img-blog.csdnimg.cn/direct/48f7acb1972d487291b9949aa6c917c1.png" width="234"> <img src="https://img-blog.csdnimg.cn/direct/253518acf1c04700acac52b8145074f8.png" width="240"></p>
+<p>先来到设计师界面，首先保证界面内有一个按钮。<br>在上方工具栏中点击第二个按钮，第二个按钮的意思就是edit signal&#x2F;slot，专门用来编辑信号和槽的界面。<br><img src="https://img-blog.csdnimg.cn/direct/2725291547a444e6a4ce05531038fbdf.png" srcset="/img/loading.gif" lazyload width="230"><br>想要实现信号和槽，就要分析谁是信号的发送者？谁是信号的接收者？<br>在该案例中，点击按钮之后，窗口才会做出反应，所以信号的发送者就是按钮，信号的接收者为窗口。<br>点击按钮，长按，往外拖出一跟线，连接到窗口上。<br>在配置连接的对话框中，点击下方从QWidget继承的信号和槽，左边信号选择按钮的clicked()信号，右边的槽函数选择窗口的showFullScreen()槽函数。<br><img src="https://img-blog.csdnimg.cn/direct/ca76040b965b4719b4b24a1044071d7b.png" srcset="/img/loading.gif" lazyload width="300"></p>
+<p><strong>第二个方案：通过转到槽来实现相应功能</strong><br>来到设计师界面中，找按钮，右键点击，选择转到槽的操作。此时，需要选择连接的信号，选择clicked()。<br><img src="https://img-blog.csdnimg.cn/direct/48f7acb1972d487291b9949aa6c917c1.png" srcset="/img/loading.gif" lazyload width="234"> <img src="https://img-blog.csdnimg.cn/direct/253518acf1c04700acac52b8145074f8.png" srcset="/img/loading.gif" lazyload width="240"></p>
 <p>跳转到代码页面中<br>此时widget.h会自动生成以下代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 所有槽函数的声明都应该放在slots下，至于是public slots还是private slots都可以。</span></span><br><span class="line"><span class="keyword">private</span> slots:</span><br><span class="line">	<span class="comment">// 自动生成的槽函数，名称以on为开头，加上信号发送者的名字，再加上信号名称组成槽函数的名字。</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">on_pushButton_clicked</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 所有槽函数的声明都应该放在slots下，至于是public slots还是private slots都可以。</span><br><span class="hljs-keyword">private</span> slots:<br>	<span class="hljs-comment">// 自动生成的槽函数，名称以on为开头，加上信号发送者的名字，再加上信号名称组成槽函数的名字。</span><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">on_pushButton_clicked</span><span class="hljs-params">()</span></span>;<br></code></pre></td></tr></table></figure>
 <p>此时widget.cpp也会自动生成以下代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Widget::on_pushButton_clicked</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 写上槽函数的代码逻辑，即点击按钮之后会发生什么。</span></span><br><span class="line">    <span class="comment">// 例如: close(); 关闭窗口</span></span><br><span class="line">    <span class="built_in">showFullScreen</span>(); <span class="comment">// 全屏显示</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-反复点击按钮之后，可以使得label上的信息来回切换"><a href="#2-反复点击按钮之后，可以使得label上的信息来回切换" class="headerlink" title="2) 反复点击按钮之后，可以使得label上的信息来回切换"></a>2) 反复点击按钮之后，可以使得label上的信息来回切换</h4><h5 id="widget-h"><a href="#widget-h" class="headerlink" title="widget.h"></a>widget.h</h5><img src="https://img-blog.csdnimg.cn/direct/89ee46fd255a42b1a727433358320224.png" width="300">
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Widget::on_pushButton_clicked</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 写上槽函数的代码逻辑，即点击按钮之后会发生什么。</span><br>    <span class="hljs-comment">// 例如: close(); 关闭窗口</span><br>    <span class="hljs-built_in">showFullScreen</span>(); <span class="hljs-comment">// 全屏显示</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="2-反复点击按钮之后，可以使得label上的信息来回切换"><a href="#2-反复点击按钮之后，可以使得label上的信息来回切换" class="headerlink" title="2) 反复点击按钮之后，可以使得label上的信息来回切换"></a>2) 反复点击按钮之后，可以使得label上的信息来回切换</h4><h5 id="widget-h"><a href="#widget-h" class="headerlink" title="widget.h"></a>widget.h</h5><img src="https://img-blog.csdnimg.cn/direct/89ee46fd255a42b1a727433358320224.png" srcset="/img/loading.gif" lazyload width="300">
 
-<h5 id="widget-cpp"><a href="#widget-cpp" class="headerlink" title="widget.cpp"></a>widget.cpp</h5><img src="https://img-blog.csdnimg.cn/direct/a945d6aae0a842ebabed72c8e0dc11bc.png" width="300">
-      </section>
+<h5 id="widget-cpp"><a href="#widget-cpp" class="headerlink" title="widget.cpp"></a>widget.cpp</h5><img src="https://img-blog.csdnimg.cn/direct/a945d6aae0a842ebabed72c8e0dc11bc.png" srcset="/img/loading.gif" lazyload width="300">
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
 
-      
-      
-        <nav class="article-nav">
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+<span class="category-chains">
+  
+  
     
-    <div class="card-text">
-      
-        <a href="/2024/01/21/html%E9%83%A8%E7%BD%B2/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">文件推送到远程部署</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2024/01/20/hello-world/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Hello World</h2>
-        </a>
-      
-      <div class="card-text--row">Older</div>
-    </div>
-  </article>
-</div>
-          
-        </nav>
-      
-
-      <section class="page-message-container layout-padding">
+      <span class="category-chain">
         
+  <a href="/categories/Qt%E5%AD%A6%E4%B9%A0/" class="category-chain-item">Qt学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/qt/" class="print-no-link">#qt</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Qt学习第一天：新建qt工程，编写helloWorld，按钮信号和槽</div>
+      <div>https://junyu21.github.io/2024/01/21/qt1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>January 21, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/01/21/html%E9%83%A8%E7%BD%B2/" title="文件推送到远程部署">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">文件推送到远程部署</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/01/20/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
 
 
   
+
+
+
   
-    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
-      <div id="valine_thread" class="valine-thread"></div>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
     </div>
-    <script type="text/javascript" src="//unpkg.com/leancloud-storage@3.15.0/dist/av-min.js"></script>
-    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
-    <script type="text/javascript">
-      new Valine({
-        el: "#valine_thread",
-        appId: "ZphrXK0sxhNnccjSLTjf8BVr-gzGzoHsz",
-        appKey: "OfHqdur3FHwO3rswkZIx2Mrw",
-        placeholder: "随便说点什么叭～",
-        avatar: "mp",
-        pageSize: 10,
-        lang: "zh-cn",
-        visitor: true,
-        recordIP: true,
-        enableQQ: false,
-        meta: ['nick', 'mail', 'link'],
-        requiredFields: ['nick'],
-        
-        // Bilibili 表情包插件
-        // 设置 Bilibili 表情包地址
-        emojiCDN: '//i0.hdslb.com/bfs/emote/', 
-        // 表情 title 和图片映射
-        emojiMaps: {
-            // 小黄脸
-            "2023": "fa6dda8b876ed38609de38aa604be5ad109b8591.png",
-            "足球": "f9157d9fa5ac3b8339cb8a8b7ad70eb40d4113c9.png",
-            "脱单doge": "bf7e00ecab02171f8461ee8cf439c73db9797748.png",
-            "微笑": "685612eadc33f6bc233776c6241813385844f182.png",
-            "口罩": "3ad2f66b151496d2a5fb0a8ea75f32265d778dd3.png",
-            "doge": "3087d273a78ccaff4bb1e9972e2ba2a7583c9f11.png",
-            "妙啊": "b4cb77159d58614a9b787b91b1cd22a81f383535.png",
-            "OK": "4683fd9ffc925fa6423110979d7dcac5eda297f4.png",
-            "星星眼": "63c9d1a31c0da745b61cdb35e0ecb28635675db2.png",
-            "辣眼睛": "35d62c496d1e4ea9e091243fa812866f5fecc101.png",
-            "吃瓜": "4191ce3c44c2b3df8fd97c33f85d3ab15f4f3c84.png",
-            "滑稽": "d15121545a99ac46774f1f4465b895fe2d1411c3.png",
-            "呲牙": "b5a5898491944a4268360f2e7a84623149672eb6.png",
-            "打call": "431432c43da3ee5aab5b0e4f8931953e649e9975.png",
-            "歪嘴": "4384050fbab0586259acdd170b510fe262f08a17.png",
-            "调皮": "8290b7308325e3179d2154327c85640af1528617.png",
-            "2022": "a783df2ce72952c44004007462324bde4b092a0c.png",
-            "虎年": "a062f5fa2bafe677e49b6963a2bbb11dd4fe1e11.png",
-            "豹富": "3d1dbe52ea16e12ff7b1c371196f728a4097fb33.png",
-            "嗑瓜子": "28a91da1685d90124cfeead74622e1ebb417c0eb.png",
-            "笑哭": "c3043ba94babf824dea03ce500d0e73763bf4f40.png",
-            "藏狐": "ba0937ef6f3ccca85e2e0047e6263f3b4da37201.png",
-            "脸红": "0922c375da40e6b69002bd89b858572f424dcfca.png",
-            "给心心": "1597302b98827463f5b75c7cac1f29ea6ce572c4.png",
-            "嘟嘟": "abd7404537d8162720ccbba9e0a8cdf75547e07a.png",
-            "哦呼": "362bded07ea5434886271d23fa25f5d85d8af06c.png",
-            "喜欢": "8a10a4d73a89f665feff3d46ca56e83dc68f9eb8.png",
-            "酸了": "92b1c8cbceea3ae0e8e32253ea414783e8ba7806.png",
-            "嫌弃": "de4c0783aaa60ec03de0a2b90858927bfad7154b.png",
-            "大哭": "2caafee2e5db4db72104650d87810cc2c123fc86.png",
-            "害羞": "9d2ec4e1fbd6cb1b4d12d2bbbdd124ccb83ddfda.png",
-            "疑惑": "b7840db4b1f9f4726b7cb23c0972720c1698d661.png",
-            "喜极而泣": "485a7e0c01c2d70707daae53bee4a9e2e31ef1ed.png",
-            "奸笑": "bb84906573472f0a84cebad1e9000eb6164a6f5a.png",
-            "笑": "81edf17314cea3b48674312b4364df44d5c01f17.png",
-            "偷笑": "6c49d226e76c42cd8002abc47b3112bc5a92f66a.png",
-            "惊讶": "f8e9a59cad52ae1a19622805696a35f0a0d853f3.png",
-            "捂脸": "6921bb43f0c634870b92f4a8ad41dada94a5296d.png",
-            "阴险": "ba8d5f8e7d136d59aab52c40fd3b8a43419eb03c.png",
-            "囧": "12e41d357a9807cc80ef1e1ed258127fcc791424.png",
-            "呆": "33ad6000d9f9f168a0976bc60937786f239e5d8c.png",
-            "抠鼻": "cb89184c97e3f6d50acfd7961c313ce50360d70f.png",
-            "大笑": "ca94ad1c7e6dac895eb5b33b7836b634c614d1c0.png",
-            "惊喜": "0afecaf3a3499479af946f29749e1a6c285b6f65.png",
-            "无语": "44667b7d9349957e903b1b62cb91fb9b13720f04.png",
-            "点赞": "1a67265993913f4c35d15a6028a30724e83e7d35.png",
-            "鼓掌": "895d1fc616b4b6c830cf96012880818c0e1de00d.png",
-            "尴尬": "cb321684ed5ce6eacdc2699092ab8fe7679e4fda.png",
-            "灵魂出窍": "43d3db7d97343c01b47e22cfabeca84b4251f35a.png",
-            "委屈": "d2f26cbdd6c96960320af03f5514c5b524990840.png",
-            "傲娇": "010540d0f61220a0db4922e4a679a1d8eca94f4e.png",
-            "疼": "905fd9a99ec316e353b9bd4ecd49a5f0a301eabf.png",
-            "冷": "cb0ebbd0668640f07ebfc0e03f7a18a8cd00b4ed.png",
-            "热": "4e58a2a6f5f1580ac33df2d2cf7ecad7d9ab3635.png",
-            "生病": "0f25ce04ae1d7baf98650986454c634f6612cb76.png",
-            "吓": "9c10c5ebc7bef27ec641b8a1877674e0c65fea5d.png",
-            "吐": "06946bfe71ac48a6078a0b662181bb5cad09decc.png",
-            "捂眼": "c5c6d6982e1e53e478daae554b239f2b227b172b.png",
-            "嘘声": "e64af664d20716e090f10411496998095f62f844.png",
-            "思考": "cfa9b7e89e4bfe04bbcd34ccb1b0df37f4fa905c.png",
-            "再见": "fc510306bae26c9aec7e287cdf201ded27b065b9.png",
-            "翻白眼": "eba54707c7168925b18f6f8b1f48d532fe08c2b1.png",
-            "哈欠": "888d877729cbec444ddbd1cf4c9af155a7a06086.png",
-            "奋斗": "bb2060c15dba7d3fd731c35079d1617f1afe3376.png",
-            "墨镜": "3a03aebfc06339d86a68c2d893303b46f4b85771.png",
-            "难过": "a651db36701610aa70a781fa98c07c9789b11543.png",
-            "撇嘴": "531863568e5668c5ac181d395508a0eeb1f0cda4.png",
-            "抓狂": "4c87afff88c22439c45b79e9d2035d21d5622eba.png",
-            "生气": "3195714219c4b582a4fb02033dd1519913d0246d.png",
-            "水稻": "d530fcaa5100ba12a17a79b55bad342d530c54e3.png",
-            "奶茶干杯": "d5a491990be551ce69f9660da948050df4eab331.png",
-            "汤圆": "93609633a9d194cf336687eb19c01dca95bde719.png",
-            "锦鲤": "643d6c19c8164ffd89e3e9cdf093cf5d773d979c.png",
-            "弹幕破百亿": "80891223ba023dff3141e377f4ea3b89918eb6a4.png",
-            "福到了": "5de5373d354c373cf1617b6b836f3a8d53c5a655.png",
-            "鸡腿": "c7860392815d345fa69c4f00ef18d67dccfbd574.png",
-            "雪花": "a41813c4edf8782047e172c884ebd4507ce5e449.png",
-            "视频卫星": "dce6fc7d6dfeafff01241924db60f8251cca5307.png",
-            "干杯": "8da12d5f55a2c7e9778dcc05b40571979fe208e6.png",
-            "黑洞": "e90ec4c799010f25391179118ccd9f66b3b279ba.png",
-            "爱心": "ed04066ea7124106d17ffcaf75600700e5442f5c.png",
-            "胜利": "b49fa9f4b1e7c3477918153b82c60b114d87347c.png",
-            "加油": "c7aaeacb21e107292d3bb053e5abde4a4459ed30.png",
-            "抱拳": "89516218158dbea18ab78e8873060bf95d33bbbe.png",
-            "响指": "1b5c53cf14336903e1d2ae3527ca380a1256a077.png",
-            "保佑": "fafe8d3de0dc139ebe995491d2dac458a865fb30.png",
-            "福": "802429a301ac5b35a0480d9526a070ce67cd8097.png",
-            "支持": "3c210366a5585706c09d4c686a9d942b39feeb50.png",
-            "拥抱": "41780a4254750cdaaccb20735730a36044e98ef3.png",
-            "跪了": "f2b3aee7e521de7799d4e3aa379b01be032698ac.png",
-            "怪我咯": "07cc6077f7f7d75b8d2c722dd9d9828a9fb9e46d.png",
-            "老鼠": "8e6fb491eb1bb0d5862e7ec8ccf9a3da12b6c155.png",
-            "牛年": "9275275ff1f2659310648221107d20bc4970f106.png",
-            "三星堆": "fc7dadaa6986e75b813aa26f3eff3281d5f1a6d1.png",
-            "洛天依": "9fe06f3594d9afaf4ee2b74770f1c3086ae0ba11.png",
-            "坎公骑冠剑_吃鸡": "c4248a7b6ab326d66c83fd1fb58f1a50f99df332.png",
-            "坎公骑冠剑_钻石": "0b97c7e50e0cc963370e62fbb9b55f51bbe7f8ab.png",
-            "坎公骑冠剑_无语": "80eba0ce64c3fc1279b4daede2f1979cb2380e78.png",
-            "来古-沉思": "4ee07ff03266d62b246be0b950bebb2abf3d997c.png",
-            "来古-呆滞": "9a70b365e523f2379f395031ceefcebb75a45903.png",
-            "来古-疑问": "032fdc0d9d9fe6334776f6c39518a959b73b98f4.png",
-            "来古-震撼": "8b40f228675602a317d32007de6b795c101135ec.png",
-            "来古-注意": "4b671ba32a2581cf40e5cd41c67b111eb8010de0.png",
-            "初音未来_大笑": "8e7f71cda83ce407b0684702983399f8ed982f17.png",
-            "原神_哇": "8188ddf95bace929d382c7a83214afde79d83bfc.png",
-            "原神_哼": "91ed33b74bc36873c3ac8b2648f70d7ab6d8ab78.png",
-            "原神_嗯": "8b0a87e414f453a29730b6e0f45ca61f2f898688.png",
-            "原神_欸嘿": "8fba438fcbe0550877b04efd768d857082307c5e.png",
-            "原神_喝茶": "1de5789fbb3526ef7823c54db7081790a38e7044.png",
-            "原神_生气": "90a38c34742899f8e84138ed55f56cad3ba611fb.png",
-            "保卫萝卜_白眼": "9fce63f38288700bf7be84f3be336cf895ba0902.png",
-            "保卫萝卜_笔芯": "5ff2ed5cb71b02010018cc5910ac7052a03769af.png",
-            "保卫萝卜_哭哭": "7d249f7c990111d3e2982f7477af15b7eb29cbd9.png",
-            "保卫萝卜_哇": "5f2370e561c32d841245f7b1aab2eef43aeb9544.png",
-            "保卫萝卜_问号": "41eb93f09fc4a4d0692a310e8a1f85ba60e96060.png",
-            "无悔华夏_不愧是你": "c58002c32ee78d45366e126f294cb3149dd64ac2.png",
-            "无悔华夏_吃瓜": "273dcff577551bafff4f1eae18561f871e73a6ba.png",
-            "无悔华夏_达咩": "cffab383f47bab7f6736ba9c8d6ac098113410d9.png",
-            "无悔华夏_点赞": "b0f2e8db405ec667c3e6aaabd7c15155b6ea8710.png",
-            "无悔华夏_好耶": "324cd79784aeb37dbf2f47f68bbe8ed5d01f975e.png",
-            "奥比岛_搬砖": "1fab697214918d91087373a999cc7ef8040ddf85.png",
-            "奥比岛_点赞": "fb0b476fe2ff30cd59385ea7d616627ac114161f.png",
-            "奥比岛_击爪": "35bba1bb8f164c5e844155548438248e6eaa8382.png",
-            "奥比岛_委屈": "fda155e7c33b40dbb94c24644e0635d47b6ef3cc.png",
-            "奥比岛_喜欢": "ed64e0c81ee194138bd9df30c65077ed978fb88c.png",
-            // tv_小电视
-            "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
-            "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
-            "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
-            "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
-            "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
-            "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
-            "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
-            "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
-            "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
-            "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
-            "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
-            "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
-            "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
-            "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
-            "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
-            "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png",
-            "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
-            "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
-            "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
-            "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
-            "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
-            "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
-            "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
-            "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
-            "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
-            "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
-            "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
-            "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
-            "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
-            "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
-            "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
-            "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
-            "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
-            "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
-            "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
-            "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
-            "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
-            "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
-            "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
-            "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
-            "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
-            "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
-            "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
-            "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
-            "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
-            "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
-            "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
-            "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
-            "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
-            "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
-            // ... 更多表情
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
         }
-        
-      });
-    </script>
-  
-
-  
-  
-
-
-      </section>
-    </div>
-    <div class="widget-info">
-      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
-  <div class="widget-body">
-    
-      <img src="https://github.com/JunYu21" class="soft-size--round soft-style--box" alt="君宇">
-    
-    
-      <h2>君宇</h2>
-    
-    
-      <p>贵在坚持</p>
-    
-
-    <div class="count-box">
-      <div class="count-box--item">
-        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
-</svg>
-        <span>4</span>
-      </div>
-      <div class="count-box--item">
-        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
-</svg>
-        3
-      </div>
-      <div class="count-box--item">
-        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
-</svg>
-        7
-      </div>
-    </div>
-  </div>
-</section>
-
-      
-
-      
-<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
-  <div class="widget-title">
-    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
-</svg>
-    <span>NOTICE</span>
-  </div>
-  <div class="widget-body">
-    <p>flex-block主题部分重构，详情查看https://github.com/miiiku/flex-block</p>
-  </div>
-</section>
-
-
-      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
-  <div class="widget-title">
-    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
-</svg>
-    <span>CATEGORYS</span>
-  </div>
-  <div class="widget-body">
-    <ul class="categorys-list">
-      
-        <li class="categorys-list-item">
-          <a href="/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">
-            项目部署 (1)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
-          <a href="/categories/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">
-            搭建自己的博客 (1)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
-          <a href="/categories/Qt%E5%AD%A6%E4%B9%A0/">
-            Qt学习 (1)
-          </a>
-        </li>
-      
-    </ul>
-  </div>
-</section>
-
-      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
-  <div class="widget-title">
-    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
-</svg>
-    <span>TAGS</span>
-  </div>
-  <div class="widget-body">
-    <div class="tags-cloud">
-      <a href="/tags/blog/" style="font-size: 10px;" class="tags-cloud-0">blog</a> <a href="/tags/git/" style="font-size: 20px;" class="tags-cloud-10">git</a> <a href="/tags/gitee/" style="font-size: 10px;" class="tags-cloud-0">gitee</a> <a href="/tags/hexo/" style="font-size: 10px;" class="tags-cloud-0">hexo</a> <a href="/tags/html/" style="font-size: 10px;" class="tags-cloud-0">html</a> <a href="/tags/nodejs/" style="font-size: 10px;" class="tags-cloud-0">nodejs</a> <a href="/tags/qt/" style="font-size: 10px;" class="tags-cloud-0">qt</a>
-    </div>
-  </div>
-</section>
-    </div>
-  </article>
-</div>
-
-    <!-- footer container -->
-<footer id="footer" class="footer">
-  <div class="footer-container">
-    
-    <div class="social-icons">
-      
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://github.com/JunYu21/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
-            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
-</svg>
-          </a>
-        
-      
-        
-          <a href="https://twitter.com/guanquanhong" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
-            <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
-</svg>
-          </a>
-        
-      
-    </div>
-     
-    <p>&copy; 2024 <a href="/" target="_blank">John Doe</a></p>
-
-    
-
-    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
-
-    <p>
-      <a href="javascript:;" id="theme-light">🌞 浅色</a>
-      <a href="javascript:;" id="theme-dark">🌛 深色</a>
-      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
-    </p>
-  </div>
-</footer>
-  </div>
-
-  <div class="back-to-top-fixed soft-size--round soft-style--box">
-    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
-      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
-      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
-    </svg>
-  </div>
-
-  
-  <!-- aplayer -->
-
-
-<!-- dplayer -->
-
-
-<!-- copy button  -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
-
-<!-- https://clipboardjs.com/ -->
-
-
-<script type="text/javascript">
-	(function () {
-		function getCodeType (elem) {
-			const classs = Array.from(elem.classList.values());
-			if (classs && classs.length > 1) {
-				return classs[1];
-			}
-			return "plain";
-		}
-
-		window.addEventListener("DOMContentLoaded", () => {
-			const copyBtnClass = "copy-btn";
-			//  instantiate clipboardjs 
-			const clipboard = new ClipboardJS('.' + copyBtnClass);
-
-			clipboard.on('success', function (e) {
-				console.info('Action:', e.action);
-				console.info('Text:', e.text);
-				console.info('Trigger:', e.trigger);
-				if (e.trigger) {
-					e.trigger.classList.add("copied");
-					setTimeout(() => {
-						e.trigger.classList.remove("copied");
-					}, 3000);
-				}
-				e.clearSelection();
-			});
-
-			clipboard.on('error', function (e) {
-				console.error('Action:', e.action);
-				console.error('Trigger:', e.trigger);
-			});
-
-			document.querySelectorAll('figure.highlight').forEach((elem) => {
-				const codeContent = elem.querySelector("td.code");
-				const copyButton = document.createElement('button');
-				copyButton.setAttribute("class", copyBtnClass);
-				copyButton.setAttribute("title", "Copy Code");
-				copyButton.setAttribute("data-clipboard-text", codeContent.innerText);
-				elem.insertBefore(copyButton, elem.children[0]);
-			});
-		})
-	})();
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
 </script>
 
 
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
 
 
   
 
-
-  
-
-
-  
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-  
-  <!-- 尾部用户自定义相关内容 -->
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>
